@@ -1,0 +1,75 @@
+body {
+  font-family: 'Courier New', monospace;
+  background: #f9e2ce;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.header {
+  padding: 20px;
+  background-color: #efb0c9;
+  color: #3a1b2f;
+  font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.day {
+  width: 100%;
+  padding-bottom: 100%; /* Square aspect ratio */
+  position: relative;
+  background: #fff1e6;
+  border: 1px solid #d9b3a9;
+  cursor: pointer;
+}
+
+.day[data-mood="happy"] { background: #F4A261; }
+.day[data-mood="sad"] { background: #264653; }
+.day[data-mood="anxious"] { background: #E76F51; }
+.day[data-mood="excited"] { background: #2A9D8F; }
+.day[data-mood="neutral"] { background: #E9C46A; }
+
+.day span {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  font-size: 12px;
+  color: #4e3020;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff5ee;
+  padding: 20px;
+  border: 2px dashed #efb0c9;
+  display: none;
+  z-index: 1000;
+  border-radius: 12px;
+}
+
+.mood-options {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.mood {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
